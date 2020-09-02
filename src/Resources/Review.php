@@ -186,7 +186,7 @@ class Review extends BaseResource
      * @param  string  $value
      * @return void
      */
-    public function setReviewLanguage($value)
+    public function setReviewLanguageAttribute($value)
     {
         $this->language = $value;
     }
