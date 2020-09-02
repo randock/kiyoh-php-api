@@ -45,6 +45,11 @@ class Review extends BaseResource
     public $updated_at;
 
     /**
+     * @var string
+     */
+    public $language;
+
+    /**
      * Create a new Review instance.
      *
      * @param  array  $attributes
@@ -91,7 +96,15 @@ class Review extends BaseResource
     {
         return $this->uuid;
     }
-
+    /**
+     * Get "language" attribute for this review.
+     *
+     * @return string
+     */
+    public function getLanguageAttribute()
+    {
+        return $this->language;
+    }
     /**
      * Determine if the review has a headline.
      *
@@ -165,6 +178,17 @@ class Review extends BaseResource
     public function setUpdatedSinceAttribute($value)
     {
         $this->updated_at = $value;
+    }
+
+    /**
+     * Alias "reviewLanguage" to the "language" attribute.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setReviewLanguage($value)
+    {
+        $this->language = $value;
     }
 
     /**
